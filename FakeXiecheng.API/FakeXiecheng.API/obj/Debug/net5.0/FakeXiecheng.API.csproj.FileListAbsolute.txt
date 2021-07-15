@@ -59,3 +59,5 @@ C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.A
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\Database\touristRoutePicturesMockData.json
+C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\Database\touristRoutesMockData.json
