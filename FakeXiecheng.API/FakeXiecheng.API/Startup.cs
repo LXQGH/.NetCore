@@ -1,8 +1,10 @@
+using FakeXiecheng.API.Database;
 using FakeXiecheng.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,7 +31,13 @@ namespace FakeXiecheng.API
         {
 
             services.AddControllers();
-            services.AddTransient<ITouristRouteRepository, MockTouristRouteRepository>();
+            services.AddTransient<ITouristRouteRepository, TouristRouteRepository>();
+            services.AddDbContext<AppDbContext>(option=>
+            {
+                //option.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FakeXcDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                //option.UseSqlServer("server=localhost;Database=FakeXcDB;User Id=sa;Password=123456");
+                option.UseSqlServer(Configuration["DbContext:ConnectionString"]);
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FakeXiecheng.API", Version = "v1" });
