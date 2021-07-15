@@ -11,7 +11,6 @@ C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.A
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\obj\Debug\net5.0\FakeXiecheng.API.csprojAssemblyReference.cache
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\obj\Debug\net5.0\FakeXiecheng.API.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\obj\Debug\net5.0\FakeXiecheng.API.AssemblyInfoInputs.cache
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\obj\Debug\net5.0\FakeXiecheng.API.AssemblyInfo.cs
