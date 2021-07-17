@@ -61,3 +61,5 @@ C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.A
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\Database\touristRoutePicturesMockData.json
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\Database\touristRoutesMockData.json
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\obj\Debug\net5.0\FakeXiecheng.API.csprojAssemblyReference.cache
+C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
