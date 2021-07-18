@@ -24,5 +24,6 @@ namespace FakeXiecheng.API.Dtos
         public string TraveIDays { get; set; }
         public string TripType { get; set; }
         public string DepartureCity { get; set; }
+        public ICollection<TouristRoutePictureDto> TouristRoutePictures { get; set; }
     }
 }
