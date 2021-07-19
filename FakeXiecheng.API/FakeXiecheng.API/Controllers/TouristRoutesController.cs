@@ -1,11 +1,13 @@
 ﻿using AutoMapper;
 using FakeXiecheng.API.Dtos;
+using FakeXiecheng.API.RouteResourceParamaters;
 using FakeXiecheng.API.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace FakeXiecheng.API.Controllers
@@ -23,9 +25,13 @@ namespace FakeXiecheng.API.Controllers
             _mapper=mapper;
         }
         [HttpGet]
-        public IActionResult GerTouristRoutes([FromQuery] string keyword)
+        public IActionResult GerTouristRoutes(
+            [FromQuery] TouristRouteResourceParamaters paramaters
+            //[FromQuery] string keyword,
+            //string rating
+            )
         {
-            var touristRoutesFromRepo = _touristRouteRepository.GetTouristRoutes(keyword);
+            var touristRoutesFromRepo = _touristRouteRepository.GetTouristRoutes(paramaters.Keyword, paramaters.RatingOperator, paramaters.RatingValue);
             if(touristRoutesFromRepo == null ||touristRoutesFromRepo.Count()<=0)
             {
                 return NotFound("没有旅游路线！");
