@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FakeXiecheng.API.Dtos;
+using FakeXiecheng.API.Models;
 using FakeXiecheng.API.RouteResourceParamaters;
 using FakeXiecheng.API.Services;
 using Microsoft.AspNetCore.Http;
@@ -39,7 +40,7 @@ namespace FakeXiecheng.API.Controllers
             var touristRouteDto = _mapper.Map<IEnumerable<TouristRouteDto>>(touristRoutesFromRepo);
             return Ok(touristRouteDto);
         }
-        [HttpGet("{touristRouteId}")]
+        [HttpGet("{touristRouteId}",Name = "GetTouristRouteById")]
         public IActionResult GetTouristRouteById(Guid touristRouteId)
         {
             var touristRoutesFromRepo = _touristRouteRepository.GetTouristRoute(touristRouteId);
@@ -66,6 +67,19 @@ namespace FakeXiecheng.API.Controllers
             var touristRouteDto = _mapper.Map<TouristRouteDto>(touristRoutesFromRepo);
             return Ok(touristRouteDto);
         }
+        [HttpPost]
+        public IActionResult CreateTouristRoute([FromBody] TouristRouteForCreationDto touristRouteForCreationDto)
+        {
+            var touristRouteModel = _mapper.Map<TouristRoute>(touristRouteForCreationDto);
 
+            _touristRouteRepository.AddTouristRoute(touristRouteModel);
+            _touristRouteRepository.Save();
+            var touristRouteToReture = _mapper.Map<TouristRouteDto>(touristRouteModel);
+            return CreatedAtRoute(
+                "GetTouristRouteById",
+                new { touristRouteId = touristRouteToReture.Id },
+                touristRouteToReture
+            );
+        }
     }
 }
