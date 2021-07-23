@@ -14,7 +14,7 @@ namespace FakeXiecheng.API.ValidationAttributes
             ValidationContext validationContext
         )
         {
-            var touristRouteDto = (TouristRouteForCreationDto)validationContext.ObjectInstance;
+            var touristRouteDto = (TouristRouteForManipulationDto)validationContext.ObjectInstance;
             if (touristRouteDto.Title == touristRouteDto.Description)
             {
                 return new ValidationResult(
