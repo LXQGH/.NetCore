@@ -37,6 +37,7 @@ namespace FakeXiecheng.API.Profiles
                );
 
             CreateMap<TouristRouteForUpdateDto, TouristRoute>();
+            CreateMap<TouristRoute,TouristRouteForUpdateDto>();
         }
     }
 }
