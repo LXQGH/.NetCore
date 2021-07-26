@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FakeXiecheng.API.Dtos;
+using FakeXiecheng.API.Helper;
 using FakeXiecheng.API.Models;
 using FakeXiecheng.API.RouteResourceParamaters;
 using FakeXiecheng.API.Services;
@@ -118,6 +119,35 @@ namespace FakeXiecheng.API.Controllers
             }
 
             _mapper.Map(touristRouteToPatch, touristRouteFromRepo);
+            _touristRouteRepository.Save();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{touristRouteId}")]
+        public IActionResult DeleteTouristRoute([FromRoute]Guid touristRouteId)
+        {
+            if(!_touristRouteRepository.TouristRouteExists(touristRouteId))
+            {
+                return NotFound("旅游路线找不到");
+            }
+            var touristRoute = _touristRouteRepository.GetTouristRoute(touristRouteId);
+            _touristRouteRepository.DeleteTouristRoute(touristRoute);
+            _touristRouteRepository.Save();
+            return NoContent();
+        }
+        //批量删除
+        [HttpDelete("({touristIDs})")]
+        public IActionResult DeleteByIDs(
+           [ModelBinder(BinderType = typeof(ArrayModelBinder))][FromRoute] IEnumerable<Guid> touristIDs)
+        {
+            if (touristIDs == null)
+            {
+                return BadRequest();
+            }
+
+            var touristRoutesFromRepo = _touristRouteRepository.GetTouristRoutesByIDList(touristIDs);
+            _touristRouteRepository.DeleteTouristRoutes(touristRoutesFromRepo);
             _touristRouteRepository.Save();
 
             return NoContent();

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace FakeXiecheng.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/touristRoutes/{touristRouteId}/pictures")]
     [ApiController]
     public class TouristRoutePictureController : ControllerBase
     {
@@ -74,6 +74,21 @@ namespace FakeXiecheng.API.Controllers
                 },
                 pictureToReturn
                 );
+        }
+
+        [HttpDelete("{pictureId}")]
+        public IActionResult DeletePicture([FromRoute]Guid touristRouteId,[FromRoute]int pictureId)
+        {
+            if(!_touristRouteRepository.TouristRouteExists(touristRouteId))
+            {
+                return NotFound("旅游路线不存在");
+            }
+            var picture = _touristRouteRepository.GetPicture(pictureId);
+            _touristRouteRepository.DeleteTouristRoutePicture(picture);
+            _touristRouteRepository.Save();
+
+            return NoContent();
+
         }
     }
 }
