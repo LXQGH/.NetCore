@@ -60,9 +60,9 @@ C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.A
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\Database\touristRoutePicturesMockData.json
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\Database\touristRoutesMockData.json
-C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\obj\Debug\net5.0\FakeXiecheng.API.csprojAssemblyReference.cache
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\小新星\Desktop\学习资料\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
