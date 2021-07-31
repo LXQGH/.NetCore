@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FakeXiecheng.API</name>
+    </assembly>
+    <members>
+        <member name="M:FakeXiecheng.API.Controllers.TouristRoutesController.GerTouristRoutes(FakeXiecheng.API.RouteResourceParamaters.TouristRouteResourceParamaters)">
+            <summary>
+            这是一个api方法的注释
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -74,10 +74,15 @@ namespace FakeXiecheng.API
                 option.UseSqlServer(Configuration["DbContext:ConnectionString"]);
             });
 
-            //Swagger
+            //注册Swagger生成器，定义一个和多个Swagger 文档
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FakeXiecheng.API", Version = "v1" });
+
+                // 为 Swagger JSON and UI设置xml文档注释路径
+                var basePath = Path.GetDirectoryName(typeof(Program).Assembly.Location);//获取应用程序所在目录（绝对，不受工作目录影响，建议采用此方法获取路径）
+                var xmlPath = Path.Combine(basePath, "FakeXiecheng.API.xml");
+                c.IncludeXmlComments(xmlPath);
 
                 //启用swagger授权认证
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()

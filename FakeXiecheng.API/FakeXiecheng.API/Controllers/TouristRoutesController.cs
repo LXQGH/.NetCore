@@ -28,6 +28,11 @@ namespace FakeXiecheng.API.Controllers
             _touristRouteRepository = touristRouteRepository;
             _mapper=mapper;
         }
+
+        /// <summary>
+        /// 这是一个api方法的注释
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GerTouristRoutes(
             [FromQuery] TouristRouteResourceParamaters paramaters
