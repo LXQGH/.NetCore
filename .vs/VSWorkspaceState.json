@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\FakeXiecheng.API",
+    "\\FakeXiecheng.API\\FakeXiecheng.API",
+    "\\FakeXiecheng.API\\FakeXiecheng.API\\Controllers"
   ],
+  "SelectedNode": "\\FakeXiecheng.API\\FakeXiecheng.API\\Controllers\\AuthenticateController.cs",
   "PreviewInSolutionExplorer": false
 }

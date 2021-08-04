@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
@@ -34,9 +35,12 @@ namespace FakeXiecheng.API
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        // 此方法由运行时调用。使用此方法向容器添加服务。管理组件依赖
         public void ConfigureServices(IServiceCollection services)
         {
-            //JWT
+            //添加服务依赖,连接数据库上下文对象
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            //JWT验证依赖服务注入
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                .AddJwtBearer(options =>
                {
@@ -66,6 +70,7 @@ namespace FakeXiecheng.API
                     new CamelCasePropertyNamesContractResolver();
             }).AddXmlDataContractSerializerFormatters();
             services.AddTransient<ITouristRouteRepository, TouristRouteRepository>();
+
             //连接数据库
             services.AddDbContext<AppDbContext>(option=>
             {
@@ -115,7 +120,9 @@ namespace FakeXiecheng.API
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        //此方法由运行时调用。使用此方法配置 HTTP 请求管道。
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -127,11 +134,11 @@ namespace FakeXiecheng.API
 
             app.UseHttpsRedirection();
 
-            // 你在哪？
+            
             app.UseRouting();
-            // 你是谁？
+            //验证
             app.UseAuthentication();
-            // 你可以干什么？有什么权限？
+            //授权
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

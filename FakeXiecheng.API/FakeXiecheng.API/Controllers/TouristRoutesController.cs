@@ -29,11 +29,10 @@ namespace FakeXiecheng.API.Controllers
             _mapper=mapper;
         }
 
-        /// <summary>
-        /// 这是一个api方法的注释
-        /// </summary>
-        /// <returns></returns>
+       
         [HttpGet]
+        [Authorize(AuthenticationSchemes ="Bearer")]
+        [Authorize]
         public async Task<IActionResult> GerTouristRoutes(
             [FromQuery] TouristRouteResourceParamaters paramaters
             //[FromQuery] string keyword,
@@ -76,7 +75,6 @@ namespace FakeXiecheng.API.Controllers
             return Ok(touristRouteDto);
         }
         [HttpPost]
-        [Authorize]
         public async Task<IActionResult> CreateTouristRoute([FromBody] TouristRouteForCreationDto touristRouteForCreationDto)
         {
             var touristRouteModel = _mapper.Map<TouristRoute>(touristRouteForCreationDto);

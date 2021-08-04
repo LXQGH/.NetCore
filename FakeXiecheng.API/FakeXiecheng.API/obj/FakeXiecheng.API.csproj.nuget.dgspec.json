@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\小新星\\Desktop\\学习资料\\.NetCore\\FakeXiecheng.API\\FakeXiecheng.API\\FakeXiecheng.API.csproj": {}
+    "C:\\Users\\小新星\\Desktop\\.NetCore\\FakeXiecheng.API\\FakeXiecheng.API\\FakeXiecheng.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\小新星\\Desktop\\学习资料\\.NetCore\\FakeXiecheng.API\\FakeXiecheng.API\\FakeXiecheng.API.csproj": {
+    "C:\\Users\\小新星\\Desktop\\.NetCore\\FakeXiecheng.API\\FakeXiecheng.API\\FakeXiecheng.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\小新星\\Desktop\\学习资料\\.NetCore\\FakeXiecheng.API\\FakeXiecheng.API\\FakeXiecheng.API.csproj",
+        "projectUniqueName": "C:\\Users\\小新星\\Desktop\\.NetCore\\FakeXiecheng.API\\FakeXiecheng.API\\FakeXiecheng.API.csproj",
         "projectName": "FakeXiecheng.API",
-        "projectPath": "C:\\Users\\小新星\\Desktop\\学习资料\\.NetCore\\FakeXiecheng.API\\FakeXiecheng.API\\FakeXiecheng.API.csproj",
+        "projectPath": "C:\\Users\\小新星\\Desktop\\.NetCore\\FakeXiecheng.API\\FakeXiecheng.API\\FakeXiecheng.API.csproj",
         "packagesPath": "C:\\Users\\小新星\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\小新星\\Desktop\\学习资料\\.NetCore\\FakeXiecheng.API\\FakeXiecheng.API\\obj\\",
+        "outputPath": "C:\\Users\\小新星\\Desktop\\.NetCore\\FakeXiecheng.API\\FakeXiecheng.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[5.0.8, )"
             },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
             "Microsoft.AspNetCore.JsonPatch": {
               "target": "Package",
               "version": "[5.0.8, )"
@@ -78,7 +82,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.1.4, )"
+              "version": "[6.1.5, )"
             }
           },
           "imports": [
