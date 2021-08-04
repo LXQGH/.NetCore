@@ -32,7 +32,7 @@ namespace FakeXiecheng.API.Controllers
        
         [HttpGet]
         [Authorize(AuthenticationSchemes ="Bearer")]
-        [Authorize]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> GerTouristRoutes(
             [FromQuery] TouristRouteResourceParamaters paramaters
             //[FromQuery] string keyword,

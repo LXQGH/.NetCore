@@ -1,4 +1,5 @@
 using FakeXiecheng.API.Database;
+using FakeXiecheng.API.Models;
 using FakeXiecheng.API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -39,7 +40,7 @@ namespace FakeXiecheng.API
         public void ConfigureServices(IServiceCollection services)
         {
             //添加服务依赖,连接数据库上下文对象
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             //JWT验证依赖服务注入
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                .AddJwtBearer(options =>
