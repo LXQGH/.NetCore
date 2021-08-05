@@ -191,8 +191,8 @@ C:\Users\小新星\Desktop\.NetCore\FakeXiecheng.API\FakeXiecheng.API\obj\Debug\
 C:\Users\小新星\Desktop\.NetCore\FakeXiecheng.API\FakeXiecheng.API\obj\Debug\net5.0\FakeXiecheng.API.pdb
 C:\Users\小新星\Desktop\.NetCore\FakeXiecheng.API\FakeXiecheng.API\obj\Debug\net5.0\FakeXiecheng.API.genruntimeconfig.cache
 C:\Users\小新星\Desktop\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\小新星\Desktop\.NetCore\FakeXiecheng.API\FakeXiecheng.API\obj\Debug\net5.0\FakeXiecheng.API.csprojAssemblyReference.cache
 C:\Users\小新星\Desktop\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\小新星\Desktop\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\小新星\Desktop\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\net5.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\小新星\Desktop\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\小新星\Desktop\.NetCore\FakeXiecheng.API\FakeXiecheng.API\obj\Debug\net5.0\FakeXiecheng.API.csprojAssemblyReference.cache
