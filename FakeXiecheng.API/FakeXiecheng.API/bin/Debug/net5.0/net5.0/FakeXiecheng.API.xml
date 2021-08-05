@@ -13,7 +13,7 @@
         </member>
         <member name="M:FakeXiecheng.API.Controllers.AuthenticateController.Register(FakeXiecheng.API.Dtos.RegisterDto)">
             <summary>
-            注册
+            注册 邮箱: 123456@qq.com   密码: Abc123@
             </summary>
             <param name="registerDto"></param>
             <returns></returns>

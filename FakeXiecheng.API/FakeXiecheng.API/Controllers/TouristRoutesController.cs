@@ -32,7 +32,7 @@ namespace FakeXiecheng.API.Controllers
        
         [HttpGet]
         [Authorize(AuthenticationSchemes ="Bearer")]
-        [Authorize(Roles ="Admin")]
+        [Authorize]
         public async Task<IActionResult> GerTouristRoutes(
             [FromQuery] TouristRouteResourceParamaters paramaters
             //[FromQuery] string keyword,
@@ -60,7 +60,7 @@ namespace FakeXiecheng.API.Controllers
             //    Id=touristRoutesFromRepo.Id,
             //    Title = touristRoutesFromRepo.Title,
             //    Description = touristRoutesFromRepo.Description,
-            //    Price = touristRoutesFromRepo.OriginalPrice*(decimal)(touristRoutesFromRepo.DisciuntPresnt ?? 1),
+            //    Price = touristRoutesFromRepo.OriginalPrice*(decimal)(touristRoutesFromRepo.DiscountPresent ?? 1),
             //    CreateTime = touristRoutesFromRepo.CreateTime,
             //    UpdateTime = touristRoutesFromRepo.UpdateTime,
             //    Features = touristRoutesFromRepo.Features,

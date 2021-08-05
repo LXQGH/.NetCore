@@ -90,7 +90,7 @@ namespace FakeXiecheng.API.Controllers
             return Ok("Bearer " + tokenStr);
         }
         /// <summary>
-        /// 注册
+        /// 注册 邮箱: 123456@qq.com   密码: Abc123@
         /// </summary>
         /// <param name="registerDto"></param>
         /// <returns></returns>
