@@ -39,7 +39,7 @@ namespace FakeXiecheng.API.Controllers
         }
 
         /// <summary>
-        /// 登录
+        /// 登录  邮箱: 123456@qq.com   密码: Abc123@
         /// </summary>
         /// <param name="loginDto"></param>
         /// <returns></returns>
