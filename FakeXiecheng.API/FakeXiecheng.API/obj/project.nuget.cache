@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Sws69IHznX5+C/QvvJV7w5P3NM0ERGls0N6hiMUmc4rzYOjgb+V/RT8nFuqLxOzgK+NWyEf/Po7BUYYJWSj6zg==",
+  "dgSpecHash": "lapAqo9nyXnp7efKRWVeBPjplFkOjSsGdRvdEHHPMTLzhB4TKNXEdT6hXWlyUruhl/AkbzaNE84Kia7foftnJA==",
   "success": true,
   "projectFilePath": "C:\\Users\\小新星\\Desktop\\.NetCore\\FakeXiecheng.API\\FakeXiecheng.API\\FakeXiecheng.API.csproj",
   "expectedPackageFiles": [
@@ -49,6 +49,7 @@
     "C:\\Users\\小新星\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\小新星\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\小新星\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
+    "C:\\Users\\小新星\\.nuget\\packages\\stateless\\5.11.0\\stateless.5.11.0.nupkg.sha512",
     "C:\\Users\\小新星\\.nuget\\packages\\swashbuckle.aspnetcore\\6.1.5\\swashbuckle.aspnetcore.6.1.5.nupkg.sha512",
     "C:\\Users\\小新星\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.1.5\\swashbuckle.aspnetcore.swagger.6.1.5.nupkg.sha512",
     "C:\\Users\\小新星\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.1.5\\swashbuckle.aspnetcore.swaggergen.6.1.5.nupkg.sha512",

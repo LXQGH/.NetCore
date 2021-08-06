@@ -18,5 +18,10 @@
             <param name="registerDto"></param>
             <returns></returns>
         </member>
+        <member name="M:FakeXiecheng.API.Controllers.ShoppingCartController.Checkout">
+            <summary>
+            下单结算
+            </summary>
+        </member>
     </members>
 </doc>

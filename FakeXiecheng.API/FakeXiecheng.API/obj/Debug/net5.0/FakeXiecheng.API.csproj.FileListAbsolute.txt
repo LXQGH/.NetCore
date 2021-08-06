@@ -196,3 +196,4 @@ C:\Users\小新星\Desktop\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\
 C:\Users\小新星\Desktop\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\net5.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\小新星\Desktop\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\net5.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\小新星\Desktop\.NetCore\FakeXiecheng.API\FakeXiecheng.API\obj\Debug\net5.0\FakeXiecheng.API.csprojAssemblyReference.cache
+C:\Users\小新星\Desktop\.NetCore\FakeXiecheng.API\FakeXiecheng.API\bin\Debug\net5.0\net5.0\stateless.dll
