@@ -37,8 +37,9 @@ namespace FakeXiecheng.API.Helper
             var converter = TypeDescriptor.GetConverter(elementType);
 
             // Convert each item in the value list to the enumerable type
-            var values = value.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(x => converter.ConvertFromString(x.Trim()))
+            //var values = value.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries)
+            var values = value.Split(new[] { "" }, StringSplitOptions.RemoveEmptyEntries)
+               .Select(x => converter.ConvertFromString(x.Trim()))
                 .ToArray();
 
             // Create an array of that type, and set it as the Model value 
