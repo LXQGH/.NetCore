@@ -39,7 +39,13 @@ namespace FakeXiecheng.API.Controllers
             //string rating
             )
         {
-            var touristRoutesFromRepo = await _touristRouteRepository.GetTouristRoutesAsync(paramaters.Keyword, paramaters.RatingOperator, paramaters.RatingValue);
+            var touristRoutesFromRepo = await _touristRouteRepository.GetTouristRoutesAsync(
+                paramaters.Keyword, 
+                paramaters.RatingOperator, 
+                paramaters.RatingValue,
+                paramaters.PageNumber,
+                paramaters.PageSize
+                );
             if(touristRoutesFromRepo == null ||touristRoutesFromRepo.Count()<=0)
             {
                 return NotFound("没有旅游路线！");

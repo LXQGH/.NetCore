@@ -1,4 +1,5 @@
 ﻿using FakeXiecheng.API.Database;
+using FakeXiecheng.API.Helper;
 using FakeXiecheng.API.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -21,7 +22,13 @@ namespace FakeXiecheng.API.Services
             return await _context.TouristRoutes.Include(t => t.TouristRoutePictures).FirstOrDefaultAsync(n => n.Id == touristRouteId);
         }
 
-        public async Task<IEnumerable<TouristRoute>> GetTouristRoutesAsync(string keyword, string ratingOperator, int? ratingValue)
+        public async Task<PaginationList<TouristRoute>> GetTouristRoutesAsync(
+            string keyword, 
+            string ratingOperator, 
+            int? ratingValue,
+            int pageSize,
+            int pageNumber
+            )
         {
             IQueryable<TouristRoute> result = _context
                 .TouristRoutes
@@ -40,7 +47,9 @@ namespace FakeXiecheng.API.Services
                     _ => result.Where(t => t.Rating == ratingValue),
                 };
             }
-            return await result.ToListAsync();
+
+            // include vs join
+            return await PaginationList<TouristRoute>.CreateAsync(pageNumber, pageSize, result);
         }
         public async Task<bool> TouristRouteExistsAsync(Guid touristRouteId)
         {
