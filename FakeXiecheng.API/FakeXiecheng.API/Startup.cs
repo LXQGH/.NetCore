@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -119,8 +120,10 @@ namespace FakeXiecheng.API
 
             //扫描Profile文件
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-        }
 
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+        }
+          
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         //此方法由运行时调用。使用此方法配置 HTTP 请求管道。

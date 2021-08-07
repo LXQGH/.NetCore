@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Mvc.Routing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,15 +24,56 @@ namespace FakeXiecheng.API.Controllers
     {
         private ITouristRouteRepository _touristRouteRepository;
         private readonly IMapper _mapper;
-        
-        public TouristRoutesController(ITouristRouteRepository touristRouteRepository,IMapper mapper)
+        private readonly IUrlHelper _urlHelper;
+
+        public TouristRoutesController(
+            ITouristRouteRepository touristRouteRepository,
+            IMapper mapper,
+             IUrlHelperFactory urlHelperFactory,
+            IActionContextAccessor actionContextAccessor
+            )
         {
             _touristRouteRepository = touristRouteRepository;
             _mapper=mapper;
+            _urlHelper = urlHelperFactory.GetUrlHelper(actionContextAccessor.ActionContext);
         }
 
-       
-        [HttpGet]
+        private string GenerateTouristRouteResourceURL(
+            TouristRouteResourceParamaters paramaters,
+            PaginationResourceParamaters paramaters2,
+            ResourceUriType type
+        )
+        {
+            return type switch
+            {
+                ResourceUriType.PreviousPage => _urlHelper.Link("GetTouristRoutes",
+                    new
+                    {
+                        keyword = paramaters.Keyword,
+                        rating = paramaters.Rating,
+                        pageNumber = paramaters2.PageNumber - 1,
+                        pageSize = paramaters2.PageSize
+                    }),
+                ResourceUriType.NextPage => _urlHelper.Link("GetTouristRoutes",
+                    new
+                    {
+                        keyword = paramaters.Keyword,
+                        rating = paramaters.Rating,
+                        pageNumber = paramaters2.PageNumber + 1,
+                        pageSize = paramaters2.PageSize
+                    }),
+                _ => _urlHelper.Link("GetTouristRoutes",
+                    new
+                    {
+                        keyword = paramaters.Keyword,
+                        rating = paramaters.Rating,
+                        pageNumber = paramaters2.PageNumber,
+                        pageSize = paramaters2.PageSize
+                    })
+            };
+        }
+
+        [HttpGet(Name = "GerTouristRoutes")]
         [Authorize(AuthenticationSchemes ="Bearer")]
         [Authorize]
         public async Task<IActionResult> GerTouristRoutes(
@@ -52,6 +95,31 @@ namespace FakeXiecheng.API.Controllers
                 return NotFound("没有旅游路线！");
             }
             var touristRouteDto = _mapper.Map<IEnumerable<TouristRouteDto>>(touristRoutesFromRepo);
+
+            var previousPageLink = touristRoutesFromRepo.HasPrevious
+               ? GenerateTouristRouteResourceURL(
+                   paramaters, paramaters2, ResourceUriType.PreviousPage)
+               : null;
+
+            var nextPageLink = touristRoutesFromRepo.HasNext
+                ? GenerateTouristRouteResourceURL(
+                    paramaters, paramaters2, ResourceUriType.NextPage)
+                : null;
+
+            // x-pagination
+            var paginationMetadata = new
+            {
+                previousPageLink,
+                nextPageLink,
+                totalCount = touristRoutesFromRepo.TotalCount,
+                pageSize = touristRoutesFromRepo.PageSize,
+                currentPage = touristRoutesFromRepo.CurrentPage,
+                totalPages = touristRoutesFromRepo.TotalPages
+            };
+
+            Response.Headers.Add("x-pagination",
+                Newtonsoft.Json.JsonConvert.SerializeObject(paginationMetadata));
+
             return Ok(touristRouteDto);
         }
         [HttpGet("{touristRouteId}",Name = "GetTouristRouteById")]
