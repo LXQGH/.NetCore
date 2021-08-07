@@ -34,7 +34,8 @@ namespace FakeXiecheng.API.Controllers
         [Authorize(AuthenticationSchemes ="Bearer")]
         [Authorize]
         public async Task<IActionResult> GerTouristRoutes(
-            [FromQuery] TouristRouteResourceParamaters paramaters
+            [FromQuery] TouristRouteResourceParamaters paramaters,
+            [FromQuery] PaginationResourceParamaters paramaters2
             //[FromQuery] string keyword,
             //string rating
             )
@@ -43,8 +44,8 @@ namespace FakeXiecheng.API.Controllers
                 paramaters.Keyword, 
                 paramaters.RatingOperator, 
                 paramaters.RatingValue,
-                paramaters.PageNumber,
-                paramaters.PageSize
+                paramaters2.PageNumber,
+                paramaters2.PageSize
                 );
             if(touristRoutesFromRepo == null ||touristRoutesFromRepo.Count()<=0)
             {
